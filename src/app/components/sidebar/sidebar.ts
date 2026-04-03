@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ChatService } from '../../services/chat';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
-export class Sidebar {}
+export class Sidebar {
+  chatService = inject(ChatService);
+}
