@@ -1,1 +1,34 @@
-<p>form works!</p>
+
+<section>
+ 
+<form [formGroup]="form" (ngSubmit)="guardarContacto()">
+    <H3>Agregar Contacto</H3>
+    <br>
+  <input type="text" formControlName="nombre" placeholder="Nombre"/>
+
+  @if (form.get('nombre')?.invalid && form.get('nombre')?.touched) {
+  <p>Nombre obligatorio</p>
+  }
+
+  <input type="text" formControlName="telefono" placeholder="Telefono" />
+
+  @if (form.get('telefono')?.invalid && form.get('telefono')?.touched) {
+  <p>Telefono invalido</p>
+  }
+
+  <input type="text" formControlName="avatar" placeholder="Avatar" />
+  @if (form.get('avatar')?.invalid && form.get('avatar')?.touched) {
+  <p>Avatar obligatorio</p>
+  }
+
+  <input type="text" formControlName="estado" placeholder="Estado" />
+   @if (form.get('estado')?.invalid && form.get('estado')?.touched) {
+  <p>Estado obligatorio</p>
+  }
+
+  <button type="submit">Enviar</button>
+</form>
+</section>
+<ul>
+
+</ul>
