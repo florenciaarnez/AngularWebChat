@@ -19,3 +19,11 @@ a{
     cursor: pointer;
     text-decoration: none; 
 }
+
+div{
+    flex: 1;
+    width: 100vh;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
