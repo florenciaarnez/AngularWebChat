@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* fondo con degradado */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, rgb(89, 155, 255), rgb(22, 99, 22));
+}
+
+/* contenedor del form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 0.95); /* un poco transparente */
+  padding: 25px;
+  width: 320px;
+  margin: 40px;
+  border-radius: 12px;
+
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2); /* más suave y moderno */
+}
+
+/* título */
+h3 {
+  margin-bottom: 10px;
+  color: #003049;
+}
+
+/* labels */
+label {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #003049;
+  font-weight: bold;
+}
+
+/* inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  border: 1px solid #bcdfff;
+  border-radius: 6px;
+}
+
+/* focus más lindo */
+input:focus {
+  outline: none;
+  border-color: rgb(89, 155, 255);
+  box-shadow: 0 0 5px rgba(89, 155, 255, 0.5);
+}
+
+/* errores */
+p {
+  color: red;
+  font-size: 12px;
+  margin: 0 0 5px 0;
+}
+
+/* botón */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+
+  background-color: #0065b8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: 0.3s; /* animación simple */
+}
+
+/* hover botón */
+button:hover {
+  background-color: #3aa0ff;
+}

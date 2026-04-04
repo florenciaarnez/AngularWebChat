@@ -1,1 +1,14 @@
-<p>login works!</p>
+
+<section>
+ 
+<form [formGroup]="form" (ngSubmit)="login()">
+    <H3>Iniciar Sesion</H3>
+    <br>
+  <input type="text" formControlName="contraseña" placeholder="Contraseña"/>
+
+  @if (form.get('contraseña')?.invalid && form.get('contraseña')?.touched) {
+  <p>Contraseña incorrecta</p>
+  }
+  <button type="submit">Enviar</button>
+</form>
+</section>
