@@ -11,6 +11,7 @@ section {
     flex: 1;
     height: auto;
     width: auto;
+    margin-top: 70px;
     background-image: url(../../../../public/fondoMensaje2.avif);
     background-repeat: repeat;            
     background-size: auto; 
