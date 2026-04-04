@@ -3,6 +3,7 @@
   <header>
     <p>Chats</p>
   </header>
+  <a routerLink="/new-contact">+</a>
   @for (chat of chatService.chats(); track chat.id) {
    
     <section class="chat-item">
