@@ -34,7 +34,7 @@ export class MessageForm implements OnInit {
       text,
       'user',
     );
-
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
     this.messageform.reset();
     }
 }
