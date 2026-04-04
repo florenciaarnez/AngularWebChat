@@ -30,7 +30,7 @@ export class Form implements OnInit {
 
     const { nombre, telefono, estado, avatar } = this.form.value;
 
-    this.chatService.agregarChat(
+    this.chatService.addChat(
       nombre,
       Number(telefono),
       estado,
