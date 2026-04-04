@@ -27,7 +27,7 @@ export class Login {
   login() {
     if (this.form.invalid) return;
      localStorage.setItem('isLogged', 'true');
-    this.router.navigate(['/home']);
+      this.router.navigate(['/chats']);
   }
 
 }

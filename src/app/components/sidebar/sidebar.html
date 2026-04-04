@@ -3,7 +3,7 @@
   <header>
     <p>Chats</p>
   </header>
-  <a routerLink="/new-contact">+</a>
+  <a routerLink="/nuevo">+</a>
   @for (chat of chatService.chats(); track chat.id) {
    
     <section class="chat-item">
@@ -24,5 +24,4 @@
       </div>
     </section>
   }
-
 </div>

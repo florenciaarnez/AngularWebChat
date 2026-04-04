@@ -38,7 +38,6 @@ export class Form implements OnInit {
     );
 
     this.form.reset();
-
-    this.router.navigate(['/home']);
+    this.router.navigate(['/chats']);
   }
 }

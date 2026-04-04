@@ -6,7 +6,7 @@ import { RouterLink } from "@angular/router";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ChatWindow, Sidebar, RouterLink],
+  imports: [ChatWindow, Sidebar],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
