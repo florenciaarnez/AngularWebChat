@@ -12,25 +12,7 @@ import { Message } from '../interfaces/message';
 })
 export class ChatService {
  // "solo acepto la estructura de mi interfaz Chat"
-  private _chats = signal<Chat[]>([
-    {
-      id: 1,
-      name: 'mi usuario',
-      telephone: 123456789,
-      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4MvEPvydKhoNlsTqqqf9edvQ4ExSg9U1iAw&s',
-      status: 'online',
-      messages: [],
-    },
-    {
-      id: 2,
-      name: 'otro usuario',
-      telephone: 987654321,
-      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4MvEPvydKhoNlsTqqqf9edvQ4ExSg9U1iAw&s',
-      status: 'offline',
-      messages: [],
-    },
-  
-  ]);
+  private _chats = signal<Chat[]>([]);
 
   public chats = this._chats.asReadonly();
 
@@ -47,10 +29,17 @@ export class ChatService {
       localStorage.setItem('mis_chats', JSON.stringify(this._chats()));
       console.log('Guardado en LocalStorage{}', this._chats());
     });
-     
+ 
   };
 
-  agregarChat(nombreNuevo: string, telefonoNuevo: number, estadoNuevo: 'online' | 'offline' | string, avatarNuevo: string ) {
+  private _selectedChat = signal<Chat | null>(null);
+  public selectedChat = this._selectedChat.asReadonly();
+
+  getChat(chat: Chat) {
+  this._selectedChat.set(chat);
+}
+
+  addChat(nombreNuevo: string, telefonoNuevo: number, estadoNuevo: 'online' | 'offline' | string, avatarNuevo: string ) {
     const listaActual = this._chats();
     const ultimoId = listaActual.length > 0 
     ? Math.max(...listaActual.map(c => c.id)) 
@@ -67,8 +56,24 @@ export class ChatService {
 
   this._chats.update(listaActual => [...listaActual, nuevoChat]);}
 
+  addMessage(chatId: number, text: string, sender: 'user' | 'app',) {
+  const nuevoMensaje: Message = {
+    text: text,
+    sender: sender,
+    timestamp: Date.now(),
+  };
+
+  this._chats.update(listaActual =>
+    listaActual.map(chat => chat.id === chatId ? { ...chat, messages: [...chat.messages, nuevoMensaje] } : chat)
+  );
+  // Actualizar selectedChat si es el chat actual
+  if (this._selectedChat()?.id === chatId) {
+    this._selectedChat.set(this._chats().find(c => c.id === chatId)!);
+  }
+  this.response(chatId);
+}
   
-  respuestaAutomatica(chatId: number) {
+  response(chatId: number) {
   setTimeout(() => {
     const respuesta :Message={
       text: 'Esta es una respuesta automática del bot.',
@@ -79,6 +84,10 @@ export class ChatService {
     this._chats.update(chats =>
       chats.map(c => c.id === chatId ? { ...c, messages: [...c.messages, respuesta] }: c)
     );
+    // Actualizar selectedChat si es el chat actual
+    if (this._selectedChat()?.id === chatId) {
+      this._selectedChat.set(this._chats().find(c => c.id === chatId)!);
+    }
   }, 2000);
 
 }}
