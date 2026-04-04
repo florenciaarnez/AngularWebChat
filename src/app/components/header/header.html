@@ -1,5 +1,14 @@
-<p>header works!</p>
 
-<header class="chat-header">
-  
+<header>
+@if (chatService.selectedChat(); as chat) {
+    <div class="chat-header">
+      <img class="avatar" [src]="chat.avatar" [alt]="chat.name">
+      <div class="chat-info">
+        <div class="chat-name">{{ chat.name }}</div>
+        <div class="chat-status">{{ chat.status }}</div>
+      </div>
+    </div>
+} @else {
+    <p>No hay chat seleccionado.</p>
+}
 </header>
