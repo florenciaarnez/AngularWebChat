@@ -21,7 +21,11 @@
   <p>Avatar obligatorio</p>
   }
 
-  <input type="text" formControlName="estado" placeholder="Estado" />
+ <select id="opciones" name="opciones" formControlName="estado">
+  <option value="offline">Offline</option>
+  <option value="online">Online</option>
+ </select>
+
    @if (form.get('estado')?.invalid && form.get('estado')?.touched) {
   <p>Estado obligatorio</p>
   }
@@ -29,6 +33,3 @@
   <button type="submit">Enviar</button>
 </form>
 </section>
-<ul>
-
-</ul>
