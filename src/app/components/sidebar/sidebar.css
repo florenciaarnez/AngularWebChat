@@ -103,5 +103,7 @@ a{
   .avatar{
      left: 5px;
   }
-
+  span{
+    display: none;
+  }
 }
