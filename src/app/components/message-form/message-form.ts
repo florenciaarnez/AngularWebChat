@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ChatService } from '../../services/chat';
 
@@ -6,7 +7,7 @@ import { ChatService } from '../../services/chat';
 @Component({
   selector: 'app-message-form',
    standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './message-form.html',
   styleUrl: './message-form.css',
 })
@@ -22,17 +23,16 @@ export class MessageForm implements OnInit {
       text: ['', [Validators.required, Validators.minLength(1)]],
     });
   }
-  guardarmensaje() {
+  saveMessage() {
     if (this.messageform.invalid) return;
 
     const { text} = this.messageform.value;
-    const chat = this.chatService.chatSeleccionado(); 
+    const chat = this.chatService.selectedChat(); 
     if (!chat) return;
-    this.chatService.agregarMensaje(
+    this.chatService.addMessage(
       chat.id,
       text,
       'user',
-      Date.now()
     );
 
     this.messageform.reset();
