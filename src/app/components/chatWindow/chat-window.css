@@ -1,0 +1,48 @@
+
+.container {
+    display: flex;
+    background-color: red;
+    
+}
+section {
+    flex: 1;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../../../../public/fondoMensaje2.avif);
+    background-repeat: repeat;            
+    background-position: center;        
+    background-attachment: fixed;   
+}
+
+.sent {
+    background-color: #0084ff;
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 250px;
+     margin-left: auto;
+     margin-right: 10px;
+     margin-bottom: 10px;
+}
+.received {
+    background-color: #007411;
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 250px;
+    margin-right: auto;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+ 
+p{
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;           
+    height: 100%;                  
+    font-size: 25px;             
+    font-weight: bold;            
+    color: #003049;               
+    text-align: center;            
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);}
