@@ -2,11 +2,13 @@
 <section class="chat-window">
     @if(chatService.selectedChat(); as chat) {
         <app-header></app-header>
+        <div class="messages-container">
             @for (message of chat.messages; track message.timestamp) {
                  <div [ngClass]="{'sent': message.sender === 'user', 'received': message.sender === 'app'}">
                     <div class="message-content">{{ message.text }}</div>
                 </div>
             }
+        </div>
         <app-message-form></app-message-form>
     } @else {
         <p>Selecciona un chat para comenzar a conversar.</p>
