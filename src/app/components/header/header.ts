@@ -3,6 +3,7 @@ import { ChatService } from '../../services/chat';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css',
