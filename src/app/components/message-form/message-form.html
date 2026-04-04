@@ -1,0 +1,8 @@
+<p>message-form works!</p>
+<form [formGroup]="messageform" (ngSubmit)="guardarmensaje()">
+    <input type="text" formControlName="text" placeholder="Escribe tu mensaje..."/>
+    @if (messageform.get('text')?.invalid && messageform.get('text')?.touched) {
+  <p>No se puede enviar un mensaje vacío</p>
+  }
+    <button type="submit">Enviar</button>
+</form>
