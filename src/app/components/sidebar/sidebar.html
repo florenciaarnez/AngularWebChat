@@ -1,13 +1,15 @@
 
 <div class="sidebar">
-
+  <header>
+    <p>Chats</p>
+  </header>
   @for (chat of chatService.chats(); track chat.id) {
    
     <section class="chat-item">
       <img class="avatar" [src]="chat.avatar" [alt]="chat.name">
       <div class="chat-info">
         <div class="chat-header">
-          <span class="chat-name" (click)="chatService.seleccionarChat(chat)">{{ chat.name }}</span>
+          <span class="chat-name" (click)="chatService.getChat(chat)">{{ chat.name }}</span>
 
           @if (chat.status === 'online') {
             <span class="status online">🟢</span>
