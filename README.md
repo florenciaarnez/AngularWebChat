@@ -2,7 +2,9 @@
 
 ##Simulador de Chat, Pagina web para agregar chats, mensajear y recibir una respuesta automatica.
 
-<img width="1862" height="962" alt="Captura desde 2026-04-04 20-39-23" src="https://github.com/user-attachments/assets/7618a8f8-a7d6-42c2-b627-b0163b503800" />
+## Probar el proyect:
+web: https://angular-web-chat.vercel.app/login
+contraseña: admin
 
 ## Tecnologias Utilizadas:
 **Angular 17:**  Freamework de js. Se utilizo: Guards, Control Flow Blocks, formularios reactivos y Singals.
@@ -76,5 +78,15 @@ Confuguracion de rutas
 
 ##  Arquitectura y Decisiones tecnicas
 
+Uso de Signals para estado reactivo
+
+Persistencia en localStorage del usuario logueado y sus respectivos chats
+
+Uso de guards para proteccion de rutas 
+
+## Captura de la pagina
+<img width="1862" height="962" alt="Captura desde 2026-04-04 20-39-23" src="https://github.com/user-attachments/assets/7618a8f8-a7d6-42c2-b627-b0163b503800" />
+
 ## Deploy 
 El proyecto fue desplegado en Vercel https://angular-web-chat.vercel.app/login
+
