@@ -4,6 +4,11 @@
 
 <img width="1862" height="962" alt="Captura desde 2026-04-04 20-39-23" src="https://github.com/user-attachments/assets/7618a8f8-a7d6-42c2-b627-b0163b503800" />
 
+## Tecnologias Utilizadas:
+**Angular 17:**  Freamework de js. Se utilizo: Guards, Control Flow Blocks, formularios reactivos y Singals.
+**Typescript:**  Lenguaje de Programacion. Se utilizo: Interfaces, inyectables, constructores y Tipado. 
+**HTML5**  Lenguaje de marcado de hipertexto Se utilizo para toda la estructura de los componentes de la pagina.
+**CSS3:** lenguaje de hojas de estilo Se utilizo para la aplicacion de estilos y el estilo responsive con Flexbox y @media. 
 ## Instrucciones para el desarollo:
 
 Clonar el repositorio
