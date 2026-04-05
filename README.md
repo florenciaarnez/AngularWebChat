@@ -1,59 +1,75 @@
 # AngularWebChat
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
+##Simulador de Chat, Pagina web para agregar chats, mensajear y recibir una respuesta automatica.
 
-## Development server
+<img width="1862" height="962" alt="Captura desde 2026-04-04 20-39-23" src="https://github.com/user-attachments/assets/7618a8f8-a7d6-42c2-b627-b0163b503800" />
 
-To start a local development server, run:
+## Instrucciones para el desarollo:
+
+Clonar el repositorio
+
+```bash
+git clone 
+```
+instalar las dependencias 
+
+```bash
+npm install 
+```
+Correr localmente:
 
 ```bash
 ng serve
 ```
+Una vez que este corriendo abrir el navegador en 
+`http://localhost:4200/`
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Instrucciones para probar el proyecto: 
+Contraseña para acceder al chat: admin
+## Estructura del proyecto
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Arquietectura modular para optimizar la organizacion y futura escalabilidad
 
 ```bash
-ng generate --help
+src/app/components
 ```
-
-## Building
-
-To build the project run:
+Contiene todos los componentes reutilizables del proyecto: 
+formularios: Form, message-form
+Header
+sidebar
+chatWindow
+```bash
+src/app/guards
+```
+Mecamismos de seguridad, (guardianes) que deciden si un usuario tiene acceso a las rutas
 
 ```bash
-ng build
+src/app/interfaces
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Estructura typescript para definir estructura de message y chat
 
 ```bash
-ng test
+src/app/services
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Servicios: ChatService para manejo de datos del localStorage con Signals
+```bash
+getChat() //para seleccionar un chat
+addChat() // Añadir un nuevo chat
+addMessage() //para añadir nuevos mensajes por chat
+response() //Respuestas automaticas
+```
+```bash
+src/app/views
+```
+Las distintas vistas/paginas que tiene la pagina web
 
 ```bash
-ng e2e
+src/app/app.routes.ts
 ```
+Confuguracion de rutas
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+##  Arquitectura y Decisiones tecnicas
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Deploy 
+El proyecto fue desplegado en Vercel https://angular-web-chat.vercel.app/login
